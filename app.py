@@ -87,7 +87,7 @@ def status(order_id):
         )
 
     # ✅ CHECK PAYMENT
-    if True:
+    if check_payment(order_id):
         update_order(order_id, {"status": "SUCCESS"})
         return redirect(url_for("otp", order_id=order_id))
 
