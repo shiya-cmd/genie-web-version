@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="card">
+    <h2>Waiting for Payment ( UPI )</h2>
+    <p>Payment Will Be Verified Automatically in 5 minutes. Don't Panic.</p>
+    <img class="qr" src="/static/qr/{{ order_id }}.png">
+    <div class="timer" id="timer">
+        ⏳ Time left: {{ time_left }}
+    </div>
+    <p><strong>Order ID:</strong> {{ order_id }}</p>
+
+    <p style="font-size:14px; color:#fca5a5; margin-top:10px;">
+        Please save this Order ID, it will help when contacting support if a order fails.
+    </p>
+
+</div>
+
+<div class="card">
+    <h4>This Page Auto refreshes in 5 seconds</h4>
+</div>
+
+<script>
+setTimeout(() => location.reload(), 5000)
+</script>
+<!-- <script>
+async function updateTimer() {
+    const res = await fetch("/api/time/{{ order_id }}");
+    const data = await res.json();
+
+    if (data.expired) {
+        window.location.href = "/failed/{{ order_id }}";
+        return;
+    }
+
+    document.getElementById("timer").innerText =
+        "⏳ Time left: " + data.time_left;
+}
+
+// update every second
+setInterval(updateTimer, 1000);
+
+// check payment status every 5 seconds
+setInterval(() => {
+    location.reload();
+}, 5000);
+
+// initial call
+updateTimer();
+</script> -->
+
+{% endblock %}

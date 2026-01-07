@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- HERO -->
+<div class="card">
+    <h1>Temporary OTP Numbers</h1>
+    <p>
+        Get instant temporary phone numbers with OTP for
+        <strong>WhatsApp</strong> and <strong>Telegram</strong>.
+        No SIM. No risk. Fast delivery.
+    </p>
+    <!-- HOW IT WORKS -->
+    <div class="card">
+        <h2>How it works</h2>
+        <p>1️⃣ Select the service</p>
+        <p>2️⃣ Scan & pay using UPI</p>
+        <p>3️⃣ Get number instantly</p>
+        <p>4️⃣ OTP arrives automatically</p>
+    </div>
+    <!-- TRUST STATS -->
+    <div class="card">
+        <div style="display:flex; justify-content:space-between; text-align:center;">
+            <div>
+                <h2>⚡</h2>
+                <p>Instant OTP</p>
+            </div>
+            <div>
+                <h2>🔒</h2>
+                <p>Private & Secure</p>
+            </div>
+            <div>
+                <h2>🌍</h2>
+                <p>India Numbers</p>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<!-- SERVICES -->
+<div id="services">
+{% for k,v in services.items() %}
+<div class="card">
+    <div>
+        <h2>{{ v.label }}</h2>
+        <span class="badge">Auto OTP</span>
+        <p style="margin-top:6px; font-size:14px;">
+            Perfect for verification & account creation.
+        </p>
+    </div>
+    <div class="price">₹{{ v.price }}</div>
+    <br>
+    <div class="">
+        <a class="button" href="/buy/{{ k }}">Buy {{ v.label }}</a>
+    </div>
+</div>
+
+
+{% endfor %}
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; margin-top:20px; font-size:13px; color:#94a3b8;">
+    <p>© {{ 2026 }} Genie Temp OTP • Fast & Reliable</p>
+</div>
+
+{% endblock %}
