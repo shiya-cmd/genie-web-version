@@ -82,3 +82,48 @@ p {
     text-align: center;
     margin-top: 12px;
 }
+/* ================= RESPONSIVE FIXES ================= */
+
+/* Default (mobile-first) – keep exactly as is */
+.container {
+    max-width: 420px;
+    margin: auto;
+}
+
+/* Improve spacing on larger screens */
+@media (min-width: 768px) {
+
+    .container {
+        max-width: 900px; /* wider but not too wide */
+    }
+
+    /* Center hero text slightly better */
+    .card h1,
+    .card h2 {
+        text-align: left;
+    }
+
+    /* Trust stats spacing */
+    .card > div[style*="display:flex"] {
+        gap: 20px;
+    }
+
+    /* Services: allow cards to sit nicer */
+    #services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+}
+
+/* Large desktop */
+@media (min-width: 1100px) {
+
+    .container {
+        max-width: 1100px;
+    }
+
+    #services {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
