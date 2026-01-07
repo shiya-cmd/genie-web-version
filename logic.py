@@ -9,8 +9,8 @@ UPI_VPA = "paytmqr2810050501013202t473pymf@paytm"
 MERCHANT_NAME = "OORPAY"
 
 SERVICE_CONFIG = {
-    "wa": {"label": "WhatsApp", "price": 1.5, "service": "wa", "country": 288882, "max_price": 0.4},
-    "tg": {"label": "Telegram", "price": 1.2, "service": "tg", "country": 22, "max_price": 0.5},
+    "wa": {"label": "WhatsApp", "price": 79, "service": "wa", "country": 22, "max_price": 0.4},
+    "tg": {"label": "Telegram", "price": 99, "service": "tg", "country": 22, "max_price": 0.5},
 }
 
 # ---------- ORDER ----------
