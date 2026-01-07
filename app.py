@@ -65,13 +65,13 @@ def status(order_id):
     order = get_order(order_id)
 
     if not order:
-        return render_template("failed.html", reason="Invalid order")
+        return render_template("failed.html", reason="Invalid order", order_id=order_id)
 
     if order["status"] == "SUCCESS":
         return redirect(url_for("otp", order_id=order_id))
 
     if order["status"] == "FAILED":
-        return render_template("failed.html", reason="Payment failed")
+        return render_template("failed.html", reason="Payment failed", order_id=order_id)
 
     created_at = order.get("created_at", 0)
     now = int(time.time())
